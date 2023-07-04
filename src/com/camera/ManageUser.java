@@ -12,12 +12,6 @@ public class ManageUser {
 public ManageUser() {
 	users.add(shashant);
 	users.add(suchit);
-	shashant.camList.add(new Camera("something","something",200.0));
-	shashant.camList.add(new Camera("something2","something",200.0));
-	shashant.camList.add(new Camera("something3","something",200.0));
-	suchit.camList.add(new Camera("suchit","suchit",100.0));
-	suchit.camList.add(new Camera("suchit2","suchit",100.0));
-	suchit.camList.add(new Camera("suchit3","suchit",100.0));
 }
 public void VerifyUser(String userName,String password) {
 	int flag=0;
@@ -33,10 +27,11 @@ public void VerifyUser(String userName,String password) {
 }
 	public static void SelectOptionMainMenu() {
 		System.out.println("1. MY CAMERA ");
-		System.out.println("2. RENT A CAMERA ");
-		System.out.println("3. VIEW ALL CAMERAS ");
-		System.out.println("4. MY WALLET ");
-		System.out.println("5. EXIT ");
+		System.out.println("2. ADD");
+		System.out.println("3. Remove");
+		System.out.println("4. VIEW ALL CAMERAS ");
+		System.out.println("5. MY WALLET ");
+		System.out.println("6. EXIT ");
 		run();
 	}
 	   public static void run() {
@@ -51,18 +46,22 @@ public void VerifyUser(String userName,String password) {
 	                  User.UserOption();
 	                    break;
 	                case 2:
-	                    Currentuser.RentCamera();
+	                    Currentuser.addCamera();;
 	                    SelectOptionMainMenu();
 	                    break;
 	                case 3:
+	                	Currentuser.remove();
+	                    SelectOptionMainMenu();
+	                	break;
+	                case 4:
 	                	Currentuser.getAllCamers();;
 	                	  SelectOptionMainMenu();
 	                	break;
-	                case 4:
+	                case 5:
 	                   Currentuser.myWallet();
 	                   SelectOptionMainMenu();
 	                    break;
-	                case 5:
+	                case 6:
 	                    exit = true;
 	                    break;
 	                default:
@@ -77,18 +76,14 @@ public void VerifyUser(String userName,String password) {
 				  int temp=sc.nextInt();
 				  switch(temp) {
 				  case 1:
-				  Currentuser.addCamera();
+				Currentuser.RentCamera();
 				User.UserOption();
 				  break;
 				  case 2:
-				   Currentuser.remove();
-				   User.UserOption();
-				  break;
-				  case 3:
 				  Currentuser.viewMyCamera();
 				  User.UserOption();
 				  break;
-				  case 4 :
+				  case 3 :
              	  ManageUser.SelectOptionMainMenu();
              	  break;
 				   default:

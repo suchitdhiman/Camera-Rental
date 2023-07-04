@@ -125,10 +125,9 @@ public class User {
 			  return null;
 		  }
 		  public static void UserOption() {
-			  System.out.println("1. ADD");
-			  System.out.println("2. REMOVE");
-			  System.out.println("3. VIEW MY CAMERA");
-			  System.out.println("4. GO TO PREVIOUS MENU ");
+			  System.out.println("1. RENT A CAMERA");
+			  System.out.println("2. VIEW MY CAMERA");
+			  System.out.println("3. GO TO PREVIOUS MENU ");
 			 ManageUser.runUserOption();
 		  }
 	}
